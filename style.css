@@ -1,0 +1,157 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: #03080a;
+  color: #45f3ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.parent {
+  min-width: 50vw;
+  min-height: 80vh;
+  position: relative;
+  padding: 50px;
+}
+
+.parent h1 {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .parent h1 {
+    font-size: 23px;
+  }
+}
+
+.parent .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.parent .container .col {
+  min-width: 50%;
+}
+
+.parent .container .col .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding: 50px 0;
+  position: relative;
+}
+
+.parent .container .col .box label {
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-size: 18px;
+}
+
+.parent .container .col .box input, .parent .container .col .box .TxtArea {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin-top: 5px;
+  background-color: #45f3ff;
+  color: #03080a;
+  border: 0;
+  padding: 0px;
+  height: 1px;
+  outline: none;
+}
+
+.parent .container .col .box input:valid, .parent .container .col .box input:focus, .parent .container .col .box .TxtArea:valid, .parent .container .col .box .TxtArea:focus {
+  padding: 20px 10px;
+}
+
+.parent .container .col .box input:focus + label, .parent .container .col .box input:valid + label, .parent .container .col .box .TxtArea:focus + label, .parent .container .col .box .TxtArea:valid + label {
+  top: 40px;
+  left: 0;
+  font-size: 15px;
+}
+
+.parent .container .col .box input:not(.TxtArea):invalid + label::after, .parent .container .col .box .TxtArea:not(.TxtArea):invalid + label::after {
+  content: '*';
+  position: absolute;
+  color: red;
+}
+
+.parent .container .col .box .TxtArea {
+  width: 95%;
+}
+
+.parent .container .col .box .TxtArea:valid, .parent .container .col .box .TxtArea:focus {
+  padding: 5px;
+  height: 60px;
+}
+
+.parent .container .col .box .TxtArea:focus + label, .parent .container .col .box .TxtArea:valid + label {
+  top: 15px;
+}
+
+@media (max-width: 525px) {
+  .parent .container .col {
+    width: 100%;
+  }
+}
+
+.parent .container .col:nth-last-child(2) {
+  width: 100%;
+  height: 100px;
+}
+
+.parent .container .col:last-child {
+  width: 100%;
+  padding: 25px 0;
+}
+
+.parent .container .col:last-child input {
+  padding: 10px 30px;
+  background-color: #45f3ff;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.parent .container .col:last-child input:hover {
+  -webkit-box-shadow: 0 0 20px #45f3ff, 0 0 40px #45f3ff;
+          box-shadow: 0 0 20px #45f3ff, 0 0 40px #45f3ff;
+}
+
+@media (max-width: 767px) {
+  .parent .container .col:last-child {
+    text-align: center;
+  }
+  .parent .container .col:last-child input {
+    padding: 15px 50px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

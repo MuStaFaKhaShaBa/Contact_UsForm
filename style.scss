@@ -1,0 +1,140 @@
+$MainColor  : #45f3ff;
+$SecondColor: #03080a;
+
+* {
+    box-sizing: border-box;
+    padding   : 0%;
+    margin    : 0%;
+}
+
+body {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    min-height      : 100vh;
+    background-color: $SecondColor;
+    color           : $MainColor;
+    font-family     : Arial, Helvetica, sans-serif;
+}
+
+.parent {
+    min-width : 50vw;
+    min-height: 80vh;
+    position  : relative;
+    padding   : 50px;
+
+    h1 {
+        text-align: center;
+
+        @media (max-width: 767px) {
+            font-size: 23px;
+        }
+    }
+
+    .container {
+        display  : flex;
+        flex-wrap: wrap;
+
+        .col {
+            min-width: 50%;
+
+            .box {
+                display  : flex;
+                flex-flow: column;
+                padding  : 50px 0;
+                position : relative;
+
+                label {
+                    position  : absolute;
+                    top       : 70px;
+                    left      : 10px;
+                    transition: 0.5s;
+                    font-size : 18px;
+                }
+
+                input,
+                .TxtArea {
+                    position        : absolute;
+                    bottom          : 0;
+                    width           : 90%;
+                    transition      : 0.5s;
+                    margin-top      : 5px;
+                    background-color: $MainColor;
+                    color           : $SecondColor;
+                    border          : 0;
+                    padding         : 0px;
+                    height          : 1px;
+                    outline         : none;
+
+                    &:valid,
+                    &:focus {
+                        padding: 20px 10px;
+                    }
+
+                    &:focus+label,
+                    &:valid+label {
+                        top      : 40px;
+                        left     : 0;
+                        font-size: 15px;
+                    }
+
+                    &:not(.TxtArea):invalid+label::after {
+                        content : "*";
+                        position: absolute;
+                        color   : red;
+                    }
+                }
+
+                .TxtArea {
+                    width: 95%;
+
+                    &:valid,
+                    &:focus {
+                        padding: 5px;
+                        height : 60px;
+                    }
+
+                    &:focus+label,
+                    &:valid+label {
+                        top: 15px;
+                    }
+                }
+            }
+
+            @media (max-width: 525px) {
+                width: 100%;
+            }
+        }
+
+        .col:nth-last-child(2) {
+            width : 100%;
+            height: 100px;
+        }
+
+        .col:last-child {
+            width  : 100%;
+            padding: 25px 0;
+
+            input {
+                padding         : 10px 30px;
+                background-color: $MainColor;
+                outline         : none;
+                border          : none;
+                font-weight     : 600;
+                transition      : 0.5s;
+
+                &:hover {
+                    box-shadow: 0 0 20px $MainColor, 0 0 40px $MainColor;
+                }
+            }
+
+            @media (max-width: 767px) {
+                text-align: center;
+
+                input {
+                    padding: 15px 50px;
+                }
+            }
+        }
+    }
+}
